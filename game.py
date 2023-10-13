@@ -4,12 +4,12 @@ class Character:
         self.health = health
         self.power = power
 
-    def alive(self):
-        if self.health > 0:
-            print("you're still alive!")
-            print("%s has %d health and %d power." % (self.name, self.health, self.power))
-        else:
-            print("you're dead!")
+    # def alive(self):
+        # if self.health > 0:
+        #     print("you're still alive!")
+        #     print("%s has %d health and %d power." % (self.name, self.health, self.power))
+        # else:
+        #     print("you're dead!")
 
 
 class Hero(Character):
@@ -32,10 +32,11 @@ Hermit = Hero("Hermit", 10, 5)
 Goober = Goblin("Goober", 6, 2)
 
 
-while Goober.alive() and Hermit.alive():
+# while Goober.alive() and Hermit.alive():
+while Goober.health > 0 and Hermit.health > 0:
     print()
     print("What do you want to do?")
-    print("1. fight goblin")
+    print("1. fight Goober")
     print("2. do nothing")
     print("3. flee")
 
@@ -47,11 +48,17 @@ while Goober.alive() and Hermit.alive():
         print("You did %d damage to the Goofy Goober!" % Hermit.power)
 
         if Goober.health <= 0:
-            print("The Goofy Goober is dead.")
-        elif user_input == "2":
-            pass
-        elif user_input == "3":
-            print("Goober is dead! Do you feel proud of yourself now?")
+            print("The Goofy Goober is dead. Are you happy now?")
+
+    elif user_input == "2":
+        pass
+
+    elif user_input == "3":
+        print("Goodbye.")
+        break
+    else:
+        print("Invalid input.")
+
 
     if Goober.health > 0:
         # Goober attacks Hermit
