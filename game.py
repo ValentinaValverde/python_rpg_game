@@ -4,12 +4,13 @@ class Character:
         self.health = health
         self.power = power
 
-    # def alive(self):
-        # if self.health > 0:
-        #     print("you're still alive!")
-        #     print("%s has %d health and %d power." % (self.name, self.health, self.power))
-        # else:
-        #     print("you're dead!")
+    def alive(self):
+        if self.health > 0:
+            print("you're still alive!")
+            print("%s has %d health and %d power." % (self.name, self.health, self.power))
+        else:
+            print("you're dead!")
+        return self.health
 
 
 class Hero(Character):
@@ -31,9 +32,13 @@ class Goblin(Character):
 Hermit = Hero("Hermit", 10, 5)
 Goober = Goblin("Goober", 6, 2)
 
+print(" ")
+print("Welcome to this silly game!")
+print(" ")
 
-# while Goober.alive() and Hermit.alive():
-while Goober.health > 0 and Hermit.health > 0:
+
+
+while Goober.alive() and Hermit.alive():
     print()
     print("What do you want to do?")
     print("1. fight Goober")
